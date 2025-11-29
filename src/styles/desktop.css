@@ -1,0 +1,30 @@
+
+/* Desktop-specific styles */
+@media (min-width: 1280px) {
+  .desktop-only {
+    display: block;
+  }
+  
+  .hide-desktop {
+    display: none !important;
+  }
+  
+  .desktop-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 10;
+  }
+  
+  .desktop-main-content {
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .desktop-only {
+    display: none !important;
+  }
+}

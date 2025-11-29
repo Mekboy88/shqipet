@@ -1,0 +1,37 @@
+
+/* Navigation buttons */
+.live-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  border: none;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.live-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.live-nav-button-left {
+  left: 10px;
+}
+
+.live-nav-button-right {
+  right: 10px;
+}
+
+.live-nav-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #666;
+}

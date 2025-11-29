@@ -1,0 +1,143 @@
+
+/* src/components/stories/stories.css */
+/* Stories styling */
+.story-card {
+  flex: 0 0 auto;
+  position: relative;
+  height: 200px;
+  width: 112px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-right: 8px; /* Add space between stories */
+}
+
+/* New image container and zoom effect */
+.story-image-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.story-image, 
+.create-story img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease-out;
+}
+
+/* Apply hover effect but not blur */
+.story-card:hover .story-image,
+.create-story:hover img {
+  transform: scale(1.056);
+}
+
+/* Add hover-only shade overlay */
+.story-card:not(.create-story)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.story-card:not(.create-story):hover::before {
+  background: rgba(0, 0, 0, 0.3); /* Black shade only on hover */
+}
+
+.create-story {
+  background: white;
+}
+
+/* Make sure user avatar and name appear above the overlay */
+.story-card .absolute {
+  z-index: 10;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* No scrollbar class for story containers */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Ensure images are sharp and clear */
+.story-card img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* First story always clear - no filters */
+.stories-scroll-container > div:nth-child(2) .story-image,
+.create-story img.sharp-image {
+  filter: none !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Navigation buttons */
+.stories-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.stories-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.stories-nav-button-left {
+  left: 10px;
+}
+
+.stories-nav-button-right {
+  right: 10px;
+}
+
+.stories-nav-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #666;
+}
+
+.stories-container {
+  position: relative;
+}
+
+/* Remove left padding from stories container */
+.stories-scroll-container {
+  padding-right: 1px;
+  padding-left: 0;
+}

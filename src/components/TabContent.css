@@ -1,0 +1,104 @@
+
+/* Custom CSS to ensure smooth transitions between tabs */
+.tab-content-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tab-content-active {
+  opacity: 1;
+}
+
+.tab-content-inactive {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 1.25rem !important;
+  }
+  
+  .responsive-text {
+    font-size: 0.875rem !important;
+  }
+  
+  .responsive-small-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Custom scrollbar for tab lists */
+.tabs-scrollbar::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+}
+
+.tabs-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tabs-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+/* Helper classes for responsive grid layouts */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Responsive padding utility classes */
+.responsive-padding {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-padding {
+    padding: 1.5rem 2rem;
+  }
+}
+
+/* Media query for tiny mobile screens */
+@media (max-width: 360px) {
+  .xs-hidden {
+    display: none !important;
+  }
+  
+  .xs-text-sm {
+    font-size: 0.75rem !important;
+  }
+  
+  .xs-minimal-padding {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}

@@ -1,0 +1,238 @@
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.animate-confetti {
+  animation: confetti-fall 3s ease-in infinite;
+}
+
+@keyframes celebration-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-celebration {
+  animation: celebration-pulse 2s ease-in-out infinite;
+}
+
+/* Diagnostic Terminal Typing Effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: #00ff00; }
+}
+
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid #00ff00;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end), blink 1s infinite;
+}
+
+/* Security Progress Ring */
+@keyframes rotate-ring {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.security-ring {
+  animation: rotate-ring 3s linear infinite;
+}
+
+/* Pulsing Security Border */
+@keyframes security-pulse {
+  0%, 100% {
+    border-color: rgb(34, 197, 94);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  50% {
+    border-color: rgb(34, 197, 94);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-security-pulse {
+  animation: security-pulse 2s infinite;
+}
+
+/* Warning Attention Animation */
+@keyframes warning-attention {
+  0%, 100% {
+    border-color: rgb(234, 179, 8);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.5);
+  }
+  50% {
+    border-color: rgb(234, 179, 8);
+    box-shadow: 0 0 0 8px rgba(234, 179, 8, 0);
+  }
+}
+
+.animate-warning-pulse {
+  animation: warning-attention 3s infinite;
+}
+
+/* Critical Error Flash */
+@keyframes critical-flash {
+  0%, 100% {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgb(239, 68, 68);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.3);
+    border-color: rgb(220, 38, 38);
+  }
+}
+
+.animate-critical-flash {
+  animation: critical-flash 1.5s infinite;
+}
+
+/* Data Flow Circuit Effect */
+@keyframes circuit-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.circuit-line {
+  background: linear-gradient(90deg, transparent 0%, #00ff00 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: circuit-flow 2s ease-in-out infinite;
+}
+
+/* Scanning Line Effect */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.scan-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+  animation: scan-line 3s ease-in-out infinite;
+}
+
+/* Progress Bar with Glow */
+@keyframes progress-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+  }
+}
+
+.progress-glow {
+  animation: progress-glow 2s ease-in-out infinite;
+}
+
+/* AI Assistant Appear */
+@keyframes ai-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ai-assistant-enter {
+  animation: ai-appear 0.5s ease-out forwards;
+}
+
+/* Matrix Rain Effect for Terminal */
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.matrix-char {
+  animation: matrix-rain 3s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Dashed moving lines for live data flow */
+@keyframes dash-move {
+  to { stroke-dashoffset: -16; }
+}
+@keyframes dash-move-reverse {
+  to { stroke-dashoffset: 16; }
+}
+.dash-flow {
+  stroke-dasharray: 8 8;
+  animation: dash-move 1.2s linear infinite;
+}
+.dash-flow-reverse {
+  stroke-dasharray: 8 8;
+  animation: dash-move-reverse 1.2s linear infinite;
+}

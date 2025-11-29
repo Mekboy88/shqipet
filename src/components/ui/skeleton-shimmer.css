@@ -1,0 +1,48 @@
+/* ==== Skeleton Shimmer (video cards) ==== */
+ .skeleton, .facebook-skeleton {
+  position: relative;
+  overflow: hidden;              /* clip to rounded corners */
+  background: rgba(0,0,0,0.06);  /* subtle base */
+}
+.dark .skeleton, .dark .facebook-skeleton { background: rgba(255,255,255,0.08); }
+
+.skeleton::after, .facebook-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.60) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmer-x 1.15s ease-in-out infinite !important;
+  pointer-events: none;
+  will-change: transform;        /* GPU hint */
+}
+
+@keyframes shimmer-x {
+  100% { transform: translateX(100%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after, .facebook-skeleton::after { animation: none; }
+}
+
+/* Facebook fade-in transition */
+.facebook-fade-in {
+  animation: facebook-fade 300ms ease-out;
+}
+
+@keyframes facebook-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

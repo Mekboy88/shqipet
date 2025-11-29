@@ -1,0 +1,27 @@
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  
+  .mobile-safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

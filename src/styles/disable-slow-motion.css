@@ -1,0 +1,36 @@
+/* EMERGENCY FIX - DISABLE ALL SLOW MOTION TRANSITIONS */
+*, *::before, *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* EXCEPTION: Allow skeleton shimmer animations */
+.skeleton::after {
+  animation: shimmer-x 1.15s ease-in-out infinite !important;
+}
+
+/* CRITICAL: Completely exclude video elements from all CSS interference */
+video {
+  transition: none !important;
+  animation: none !important;
+  /* CHROME FIX: Allow video hardware acceleration */
+  will-change: transform !important;
+  -webkit-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+}
+
+video * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Keep only essential hover effects for buttons */
+button:hover {
+  transition: background-color 0.1s ease !important;
+}
+
+/* Keep only essential focus effects */
+input:focus, textarea:focus {
+  transition: border-color 0.1s ease, box-shadow 0.1s ease !important;
+}

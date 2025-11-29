@@ -1,0 +1,60 @@
+
+/* Hide scrollbars in most browsers */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Styles for person cards - increased size by 5% */
+.person-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.person-card-container {
+  width: 189px; /* Original 180px + 5% */
+}
+
+.person-card-container:hover .person-card {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image hover effect */
+.person-card img {
+  transition: transform 0.5s ease;
+}
+
+.person-card-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Smoke shade effect - now lighter by default */
+.smoke-shade {
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.08); /* Reduced from 0.15 to 0.08 */
+  opacity: 0.8;
+}
+
+.person-card-container:hover .smoke-shade {
+  background: rgba(0, 0, 0, 0.15); /* Reduced from 0.25 to 0.15 */
+  opacity: 1;
+}
+
+/* Enhanced border shade effect - lighter */
+.person-card {
+  position: relative;
+}
+
+.person-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px 3px rgba(0, 0, 0, 0.2); /* Reduced from 0.3 to 0.2 */
+  z-index: 10;
+}

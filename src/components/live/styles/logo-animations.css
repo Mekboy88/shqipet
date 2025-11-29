@@ -1,0 +1,45 @@
+
+/* Logo animations CSS */
+.logo-text {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    135deg,
+    #FF4D4D 0%,
+    #FF4D4D 25%,
+    #1F2937 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.logo-text span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  transform-origin: bottom;
+}
+
+.logo-text span:hover {
+  transform: translateY(-2px) scale(1.1);
+  color: #FF4D4D;
+}
+
+/* Admin-specific logo text styling without shadow and animations */
+.admin-logo-text {
+  /* Keep all other gradient properties from logo-text class */
+  transition: all 300ms ease-out;
+}
+
+.admin-logo-text span:hover {
+  transform: translateY(-2px) scale(1.1);
+  color: #FF4D4D;
+}
+
+/* Logo text sliding animation */
+.sidebar-animation {
+  transition: width 0.3s ease-out;
+}

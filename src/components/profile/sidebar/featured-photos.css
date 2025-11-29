@@ -1,0 +1,76 @@
+
+/* Hide scrollbars but maintain scrolling functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Story-like effects for photos */
+.photo-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.photo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.photo-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.2) 100%);
+  pointer-events: none;
+}
+
+/* Navigation buttons */
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.nav-button:focus {
+  outline: none;
+}
+
+/* Photo scroll container specific styling */
+.photo-scroll-container {
+  margin-bottom: 16px;
+}
+
+/* Embedded photo scroll container - for use within another card */
+.photo-scroll-embedded {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+/* Remove extra spacing when embedded */
+.embedded-photos {
+  margin-top: 0;
+  padding-top: 0;
+}

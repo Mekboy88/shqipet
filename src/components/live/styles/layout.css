@@ -1,0 +1,22 @@
+
+/* Live section container */
+.live-section-container {
+  position: relative;
+}
+
+/* Hide scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Text section with white shade at bottom */
+.live-video-text {
+  position: relative;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.9) 50%, white 100%);
+  border-radius: 0 0 8px 8px;
+}

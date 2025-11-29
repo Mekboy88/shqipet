@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "Offline Style",
+  "sources": {
+    "pmtiles": {
+      "type": "vector",
+      "url": "pmtiles://offline-map.pmtiles"
+    }
+  },
+  "sprite": "/maps/sprites/sprite",
+  "glyphs": "/maps/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "hsl(210, 14%, 95%)"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "pmtiles",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": "hsl(210, 60%, 85%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "land",
+      "type": "fill",
+      "source": "pmtiles",
+      "source-layer": "land",
+      "paint": {
+        "fill-color": "hsl(210, 14%, 97%)"
+      }
+    },
+    {
+      "id": "roads",
+      "type": "line",
+      "source": "pmtiles",
+      "source-layer": "roads",
+      "paint": {
+        "line-color": "hsl(var(--primary))",
+        "line-width": 2,
+        "line-opacity": 0.7
+      }
+    },
+    {
+      "id": "poi",
+      "type": "circle",
+      "source": "pmtiles",
+      "source-layer": "poi",
+      "paint": {
+        "circle-color": "hsl(var(--primary))",
+        "circle-radius": 4,
+        "circle-opacity": 0.8
+      }
+    }
+  ]
+}

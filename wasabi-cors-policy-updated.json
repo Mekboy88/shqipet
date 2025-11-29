@@ -1,0 +1,23 @@
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+    "AllowedOrigins": [
+      "https://shqipet.com",
+      "https://www.shqipet.com",
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://shqipet-codebase.lovable.app",
+      "https://*.lovable.app"
+    ],
+    "ExposeHeaders": [
+      "ETag",
+      "x-amz-request-id",
+      "x-amz-id-2",
+      "Content-Type",
+      "Content-Length",
+      "Date"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]
