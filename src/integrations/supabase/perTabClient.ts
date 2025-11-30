@@ -1,34 +1,49 @@
-// Per-tab Supabase client with isolated authentication
-// Uses sessionStorage to keep auth state strictly within this browser tab
-import { createClient } from '@supabase/supabase-js';
-import type { Database } from './types';
+// Stub file - backend removed
+const mockResponse = { data: [], error: null };
+const mockResponseSingle = { data: null, error: null };
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const createMockFrom = () => ({
+  select: (...args: any[]) => createMockFrom(),
+  insert: (...args: any[]) => createMockFrom(),
+  update: (...args: any[]) => createMockFrom(),
+  delete: (...args: any[]) => createMockFrom(),
+  eq: (...args: any[]) => createMockFrom(),
+  neq: (...args: any[]) => createMockFrom(),
+  gt: (...args: any[]) => createMockFrom(),
+  gte: (...args: any[]) => createMockFrom(),
+  lt: (...args: any[]) => createMockFrom(),
+  lte: (...args: any[]) => createMockFrom(),
+  like: (...args: any[]) => createMockFrom(),
+  ilike: (...args: any[]) => createMockFrom(),
+  is: (...args: any[]) => createMockFrom(),
+  in: (...args: any[]) => createMockFrom(),
+  contains: (...args: any[]) => createMockFrom(),
+  order: (...args: any[]) => createMockFrom(),
+  limit: (...args: any[]) => createMockFrom(),
+  range: (...args: any[]) => createMockFrom(),
+  single: () => Promise.resolve(mockResponseSingle),
+  maybeSingle: () => Promise.resolve(mockResponseSingle),
+  then: (resolve: any) => Promise.resolve(mockResponse).then(resolve),
+  catch: (reject: any) => Promise.resolve(mockResponse).catch(reject),
+});
 
-// Generate a unique storage key for this tab
-const getTabStorageKey = () => {
-  const key = 'sb-tab-id';
-  let tabId = sessionStorage.getItem(key);
-  
-  if (!tabId) {
-    tabId = `tab-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
-    sessionStorage.setItem(key, tabId);
-  }
-  
-  return `sb-${tabId}`;
+export const perTabSupabase: any = {
+  from: (table: string) => createMockFrom(),
+  auth: {
+    signUp: (credentials: any) => Promise.resolve({ data: { user: null, session: null }, error: null }),
+    signInWithPassword: (credentials: any) => Promise.resolve({ data: { user: null, session: null }, error: null }),
+    signOut: () => Promise.resolve({ error: null }),
+    getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+    getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+    onAuthStateChange: (callback: any) => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    refreshSession: (refreshToken?: any) => Promise.resolve({ data: { session: null, user: null }, error: null }),
+    updateUser: (attributes: any) => Promise.resolve({ data: { user: null }, error: null }),
+  },
+  storage: {
+    from: (bucket: string) => ({
+      upload: () => Promise.resolve(mockResponseSingle),
+      getPublicUrl: () => ({ data: { publicUrl: '' } }),
+    }),
+  },
+  rpc: (fn: string, params?: any) => Promise.resolve(mockResponseSingle),
 };
-
-// Create per-tab client with sessionStorage
-export const perTabSupabase = createClient<Database>(
-  SUPABASE_URL, 
-  SUPABASE_PUBLISHABLE_KEY, 
-  {
-    auth: {
-      storage: sessionStorage,
-      storageKey: getTabStorageKey(),
-      persistSession: true,
-      autoRefreshToken: true,
-    }
-  }
-);
