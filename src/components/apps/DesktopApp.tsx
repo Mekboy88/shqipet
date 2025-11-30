@@ -86,8 +86,6 @@ import CorePlatformNavigation from '@/pages/admin/core-platform/CorePlatformNavi
 import CorePlatformDeepLinking from '@/pages/admin/core-platform/CorePlatformDeepLinking';
 import CorePlatformSecurityModules from '@/pages/admin/core-platform/CorePlatformSecurityModules';
 import LiveConnectionTopology from '@/pages/admin/core-platform/LiveConnectionTopology';
-import ChatGPTIntegration from '@/pages/admin/integrations/ChatGPTIntegration';
-import OAuthProvidersConfig from '@/pages/admin/integrations/OAuthProvidersConfig';
 import LocalizationCurrencyPage from '@/pages/admin/localization/LocalizationCurrencyPage';
 import AIAPIsConnection from '@/components/admin/AIAPIsConnection';
 import AdminUserDashboard from '@/components/admin/users/AdminUserDashboard';
@@ -343,12 +341,6 @@ const DesktopApp: React.FC = () => {
             <Route path="logs" element={<TwoFASessionLogs />} />
             <Route path="settings" element={<LoginSettings />} />
             <Route path="oauth" element={<OAuthProviders />} />
-            <Route path="*" element={<UnderConstructionWithRefresh />} />
-          </Route>
-
-          <Route path="/admin/integrations/*" element={<AdminDashboard />}>
-            <Route path="chatgpt" element={<ChatGPTIntegration />} />
-            <Route path="oauth" element={<OAuthProvidersConfig />} />
             <Route path="*" element={<UnderConstructionWithRefresh />} />
           </Route>
 
