@@ -1,20 +1,16 @@
-import { useAuth } from '@/contexts/AuthContext';
-
+// Stub for frontend compatibility
 export type UserRole = string | null;
 
 export const useUserRole = () => {
-  // Use centralized auth context instead of independent fetching
-  const authContext = useAuth();
-  
   return {
-    userRole: authContext.userRole,
-    userLevel: authContext.userLevel,
-    loading: authContext.loading,
+    userRole: null,
+    userLevel: 0,
+    loading: false,
     error: null,
-    isSuperAdmin: authContext.isSuperAdmin,
-    isAdmin: authContext.isAdmin,
-    isModerator: authContext.isModerator,
-    isPlatformOwner: authContext.isPlatformOwner,
-    canManageUsers: authContext.canManageUsers
+    isSuperAdmin: false,
+    isAdmin: false,
+    isModerator: false,
+    isPlatformOwner: false,
+    canManageUsers: false
   };
 };

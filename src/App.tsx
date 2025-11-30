@@ -45,8 +45,6 @@ import AdminDashboardContent from './pages/admin/AdminDashboardContent';
 import AdminOverview from './pages/admin/AdminOverview';
 import UsersManagement from './pages/admin/UsersManagement';
 import SystemRequirementsStatusPage from './pages/admin/SystemRequirementsStatusPage';
-import OAuthProvidersConfig from './pages/admin/integrations/OAuthProvidersConfig';
-import ChatGPTIntegration from './pages/admin/integrations/ChatGPTIntegration';
 import AIAnalyticsDashboard from './pages/admin/AIAnalyticsDashboard';
 import LiveConnectionTopology from './pages/admin/core-platform/LiveConnectionTopology';
 import AIAPIsConnection from './components/admin/AIAPIsConnection';
